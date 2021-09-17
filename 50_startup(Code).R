@@ -42,29 +42,6 @@ naive_model = naiveBayes(naive_formla,data = Train)
 
 
 
-# -----Social_Network_Ads-------------- -----------------------------------
-
-
-setwd("C:/Users/Dell/Desktop/practice task")
-Social_Network_Ads = read.csv('Social_Network_Ads.csv',header = T)
-
-Social_Network_Ads$rgup = (1:400)
-
-Social_train = subset(Social_Network_Ads,Social_Network_Ads$rgup > 50)
-social_test = subset(Social_Network_Ads,Social_Network_Ads$rgup <= 50)
-
-social_ln_formula = as.formula("Age~EstimatedSalary+Purchased")
-social_ln_model = lm(ln_formula,data = Social_train)
-
-social_logic_formla = as.formula("Age~EstimatedSalary+Purchased")
-social_logic_model = glm(logic_formla,data = Social_train)
-
-social_kmeans = kmeans(Social_train$EstimatedSalary,centers = 2)
-library("e1071")
-social_naive_formla = as.formula("Age~EstimatedSalary+Purchased")
-social_naive_model = naiveBayes(social_naive_formla,data = Social_train)
-
-
 
 
 
