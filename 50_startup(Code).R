@@ -68,18 +68,3 @@ social_naive_model = naiveBayes(social_naive_formla,data = Social_train)
 
 
 
-
-
-
-
-
-# Extra work --------------------------------------------------------------
-
-library(ggplot2)
-ggplot(Fifty_Startups) + geom_line(aes(x = State,y = Profit),fill ="pink")
-
-set = setdiff(colnames(Fifty_Startups),list("State"))
-formula = as.formula(paste("Profit + RnDSpend",paste(set,collapse = '+'),sep = '~'))
-model = lm(formula,data =  Fifty_Startups)
-
-
